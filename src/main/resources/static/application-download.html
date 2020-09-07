@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8">
+    <title>电子凭证验证</title>
+    <link rel="icon" href="pingan.ico" type="image/x-icon" sizes="32x32"/>
+    <meta name="WT.pageID" content="LSWJ-DYLS-DZPZYZCG">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta name="description" content="中国平安">
+    <meta name="keywords" content="中国平安">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="WT.pa_cpnid" content="交易流水打印">
+    <meta name="WT.pageID" content="printTransRec">
+    <meta name="W_design" content="750">
+    <script>window.navigator.userAgent.toLocaleLowerCase().indexOf("paebank")>-1&&(/stg/.test(location.hostname)||/b-fat/.test(location.hostname))&&(document.write('<script src="https://test-b-fat.pingan.com.cn/brac-ia/pocketPay/assets/lib/aladdin-console.min.js"><\/script>'),console.log(location.href))</script><script type="text/javascript">!function(e,t){function i(){var t=n.getBoundingClientRect().width;t/m>750&&(t=750*m);var i=t/7.5;n.style.fontSize=i+"px",s.rem=e.rem=i}var a,r=e.document,n=r.documentElement,o=r.querySelector('meta[name="viewport"]'),l=r.querySelector('meta[name="flexible"]'),m=0,d=0,s=t.flexible||(t.flexible={});if(o){console.warn("将根据已有的meta标签来设置缩放比例");var c=o.getAttribute("content").match(/initial\-scale=([\d\.]+)/);c&&(d=parseFloat(c[1]),m=parseInt(1/d))}else if(l){var p=l.getAttribute("content");if(p){var u=p.match(/initial\-dpr=([\d\.]+)/),f=p.match(/maximum\-dpr=([\d\.]+)/);u&&(m=parseFloat(u[1]),d=parseFloat((1/m).toFixed(2))),f&&(m=parseFloat(f[1]),d=parseFloat((1/m).toFixed(2)))}}if(!m&&!d){var h=e.navigator.userAgent,v=(h.match(/android/gi),!!h.match(/iphone/gi)),x=v&&!!h.match(/OS 9_3/),b=e.devicePixelRatio;d=1/(m=v&&!x?b>=3&&(!m||m>=3)?3:b>=2&&(!m||m>=2)?2:1:1)}if(n.setAttribute("data-dpr",m),!o)if((o=r.createElement("meta")).setAttribute("name","viewport"),o.setAttribute("content","initial-scale="+d+", maximum-scale="+d+", minimum-scale="+d+", user-scalable=no"),n.firstElementChild)n.firstElementChild.appendChild(o);else{var w=r.createElement("div");w.appendChild(o),r.write(w.innerHTML)}e.addEventListener("resize",function(){clearTimeout(a),a=setTimeout(i,300)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(a),a=setTimeout(i,300))},!1),"complete"===r.readyState?r.body.style.fontSize=12*m+"px":r.addEventListener("DOMContentLoaded",function(){r.body.style.fontSize=12*m+"px"},!1),i(),s.dpr=e.dpr=m,s.refreshRem=i,s.rem2px=function(e){var t=parseFloat(e)*this.rem;return"string"==typeof e&&e.match(/rem$/)&&(t+="px"),t},s.px2rem=function(e){var t=parseFloat(e)/this.rem;return"string"==typeof e&&e.match(/px$/)&&(t+="rem"),t}}(window,window.lib||(window.lib={}))</script><link type="text/css" rel="stylesheet" href="https://bank-static.pingan.com.cn/m/act/koudai/printflow/css/peui.min.css"><link type="text/css" rel="stylesheet" href="https://bank-static.pingan.com.cn/m/act/koudai/printflow/css/flow/style.css?v=20190627"><link href="https://bank-static.pingan.com.cn/m/act/koudai/printflow/css/application-download.e31aeff1b1291370a28bb3515e9f4871.css?7e470f38fce8308c8a3b" rel="stylesheet"><script type="text/javascript" async="" src="https://cdn.sdb.com.cn/??shared/static/app_com/sw-registration/1.0.0/sw-registration.js"></script><script type="text/javascript" async="" src="https://cdn.sdb.com.cn/??/bron-coss/webtrends/lib/ajaxhook.js?v=67,/bron-coss/webtrends/sdc_new_m.js?v=67,/bron-coss/webtrends/lib/elementTrace.js?v=67" id="JS-webtrendId"></script><script type="text/javascript" src="https://bfiles.pingan.com.cn/credit/stp/guest/dlds-dfp/public/downloads/frms-fingerprint.js?custID=200&amp;serviceUrl=https://bfiles.pingan.com.cn/credit/stp/guest/dlds-dfp/public/generate/jsonp&amp;loadSource=script&amp;type=1&amp;ymd=202091"></script>
+    <style type="text/css">
+        .aladdin-dialog{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-pack:center;-webkit-box-align:center;background:rgba(0,0,0,.1)}div .aladdin-dialog-content{font-size: 17px;/*box-shadow:1px 1px 10px 6px rgba(0,0,0,.5);*/border-radius:5px;width:281px;-webkit-background-clip:padding-box;background-clip:padding-box;pointer-events:auto;background-color:#fafafc;position:relative;}
+        .aladdin-dialog-header{height:48px;line-height:48px;text-align:center;position:relative;border-bottom:1px solid #e7e7e7}
+        .aladdin-dialog-body{min-height:40px;border-top-left-radius:5px;border-top-right-radius:5px;border-bottom:1px solid #e7e7e7;padding:25px 16px;display:-webkit-box;display:box;-webkit-box-pack:center;-webkit-box-align:center;-webkit-box-orient:vertical}.aladdin-dialog-body>div{width:88%;text-align:center}
+        .aladdin-dialog-footer{height:42px;line-height:42px;border-bottom-left-radius:6px;border-bottom-right-radius:6px;width:100%}
+        .aladdin-dialog-footer-btn{color:#666;font-size: 17px;text-align:center;width:100%;line-height:42px;text-align:center;display:inline-block}
+        .aladdin-dialog-footer-left{font-weight: normal;width:49%;border-right:1px solid #e7e7e7}
+        .aladdin-dialog-footer-right{width:49%;color:#F17940!important;}</style><style type="text/css">
+        .aladdin-dialog-content{-webkit-transform: scale(1,1);transform: scale(1,1);}
+    </style>
+</head>
+<body style="font-size: 12px;" onload="preLoad()">
+<div id="userdata_el" style="visibility: hidden; position: absolute;"></div>
+<div data-v-24621704="" id="alertMsg" style="visibility: hidden;z-index: 9999;position: absolute">
+    <div data-v-24621704="" class="pec-mask"></div>
+    <div data-v-24621704="" class="pec-pop">
+        <h3 data-v-24621704="">
+            <span data-v-24621704="">提示</span>
+        </h3>
+        <div data-v-24621704="" class="pec-header-padding" style="display: none;"></div>
+        <div data-v-24621704="" class="pec-pop-content" style="">
+            <div data-v-24621704="" class="pec-pop-message-mask"></div>
+            <div data-v-24621704="" class="pec-pop-main pec-pop-main1">
+                <div data-v-24621704="" class="pec-pop-message">
+                    <p id="alertMsgContent" data-v-24621704=""></p> <!----></div>
+            </div>
+        </div>
+        <div data-v-24621704="" class="pec-pop-btn pec-by-vertical">
+            <button data-v-24621704="" class="orange-btn" onclick="closeAlertMsg()">确认</button>
+        </div> <!----> <!---->
+    </div>
+</div>
+<div id="checkMsg" style="visibility: visible; z-index: 999; position: fixed">
+    <header class="header-orange">
+        <div class="pec-header-left" style="display: none;">
+            <i class="icon-back2"></i>
+        </div>
+        <div class="pec-header-title">电子凭证验证</div>
+    </header>
+    <section>
+        <div class="pec-list pec-mt-20">
+            <div class="pec-list-item">
+                <div class="pec-item-head">凭证验证码</div>
+                <div class="pec-item-body">
+                    <label>
+                        <input type="text" placeholder="请输入凭证验证码" readonly="readonly" id="checkCodeInput" class="pec-input" value="">
+                    </label>
+                </div>
+            </div>
+            <div class="pec-list-item">
+                <div class="pec-item-head">证件号码</div>
+                <div class="pec-item-body">
+                    <label>
+                        <input id="id-card" type="text" placeholder="为保护隐私，请录入申请人证件号" class="pec-input">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="pec-btn-zone pa-by-vertical">
+            <!--<button size="big" type="button" otype="button" otitle="提交验证-电子凭证验证" class="pec-primary-btn" onclick="check">提交验证</button>-->
+            <button size="big" class="pec-primary-btn" onclick="check()">提交验证</button>
+        </div>
+            <div class="tips">
+            <h3>温馨提示:</h3>
+            <p>1、如果使用PC验证，建议使用谷歌或火狐浏览器查看。</p>
+            <p>2、为了您的信息安全，预览模式下不支持分享。</p>
+            <p>3、打包下载的是ZIP压缩文件，iPhone下需要配合解压工具方能打开压缩包。</p>
+        </div> <!---->
+        <div id="browserTip" style="visibility: hidden" class="mask"><!----> <div class="mask-induce android"></div></div>
+    </section> <!----> <!----> <!---->
+</div>
+<div id="checkSuccessMsg" style="visibility: hidden; z-index: 999; position: fixed">
+    <div>
+        <header class="header-orange">
+            <div class="pec-header-left" style="">
+                <i class="icon-back2" onclick="returnPre()"></i>
+            </div> <div class="pec-header-title">电子凭证验证</div>
+        </header> <!---->
+        <section>
+            <div class="pec-result">
+                <i class="icon-result-ok"></i>
+                <p class="pec-result-txt">凭证有效</p>
+                <div class="pec-list result-info-list">
+                    <div class="pec-list-item">
+                        <div class="pec-item-head">凭证类型</div>
+                        <div class="pec-item-foot">账户交易流水</div>
+                    </div>
+                    <div class="pec-list-item">
+                    <div class="pec-item-head">编号</div>
+                    <div  id="pec-item-head" class="pec-item-foot"></div>
+                </div>
+                    <div class="pec-list-item">
+                        <div class="pec-item-head">状态</div>
+                        <div class="pec-item-foot">有效</div>
+                    </div> <div class="pec-list-item">
+                    <div class="pec-item-head">预览</div>
+                    <div class="pec-item-foot">
+                        <p otitle="电子凭证验证-点击预览" otype="button" class="pec-link" onclick="preview()">点击预览</p>
+                    </div>
+                </div> <div class="pec-list-item">
+                    <div class="pec-item-head">下载链接</div>
+                    <div class="pec-item-foot">
+                        <a href="javascript:void(0);" onclick="fileDownload('1')" class="pec-link">打包下载(ZIP压缩格式)</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="tips">
+                <h3>温馨提示:</h3>
+                <p>1、如果使用PC验证，建议使用谷歌或火狐浏览器查看。</p>
+                <p>2、为了您的信息安全，预览模式下不支持分享。</p>
+                <p>3、打包下载的是ZIP压缩文件，iPhone下需要配合解压工具方能打开压缩包。</p>
+            </div>
+        </section> <!----> <!---->
+    </div>
+</div>
+<div id="preview" style="visibility: hidden; z-index: 999   ; position: fixed">
+    <header class="header-orange">
+        <div class="pec-header-left" style="">
+            <i class="icon-back2" onclick="returnPre()"></i>
+        </div>
+        <div class="pec-header-title">电子凭证验证</div>
+    </header>
+    <section>
+        <div class="list-flow-preview">
+            <div title="电子凭证验证-下载" class="item-flow-preview" onclick="fileDownload('')">
+                <i class="pdf"></i>
+                <p>交易流水预览第1部分.pdf</p>
+                <i class="arrowRight"></i>
+            </div>
+        </div>
+        <div id="tf-new-preview" class="tf-new" style="visibility: hidden">
+            <div class="wx-remind">
+                <h4>在线打印温馨提示：</h4>
+                <p>1、请选择需要打印的流水</p>
+                <p>2、请确保打印机已经打开；</p>
+                <p>3、请确保手机和打印机WIFI已配对；</p>
+                <p>4、口袋APP和打印机需连同一网络WIFI。</p>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+    var checkCode = "PTI97177420200901";
+    function is_weixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }// 这个实现是否是在微信打开的，如果是返回true，如果不是，返回false
+    function preLoad(){
+        document.getElementById("checkCodeInput").value = checkCode;
+        document.getElementById("pec-item-head").innerText=checkCode;
+        if (is_weixin()){
+            document.getElementById("browserTip").style.visibility="visible";
+        }
+        // if (!isPc() || document.getElementById("preview").style.visibility=="hidden"){
+        //     document.getElementById("tf-new-preview").style.visibility="hidden";
+        // }
+    }
+    function check() {
+        var xhr = new XMLHttpRequest();
+        xhr.timeout = 3000;
+        xhr.ontimeout = function () {
+            alert("请求超时！");
+        }
+        var idCard = document.getElementById("id-card").value
+        xhr.open('get', 'https://b.pingan.pet/m/act/koudai/printflow/check?idCard=' + idCard);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                if (xhr.responseText=="0"){
+                    document.getElementById("alertMsgContent").innerText="凭证码或证件号为空";
+                    document.getElementById("alertMsg").style.visibility="visible";
+                }else if (xhr.responseText=="1"){
+                    document.getElementById("alertMsgContent").innerText="证件号码有误，请重输";
+                    document.getElementById("alertMsg").style.visibility="visible";
+                }else {
+                    // document.getElementById("checkMsg").remove();
+                    document.getElementById("checkMsg").style.visibility="hidden";
+                    document.getElementById("checkSuccessMsg").style.visibility="visible";
+                }
+            }
+        }
+    }
+    function closeAlertMsg() {
+        document.getElementById("alertMsg").style.visibility="hidden";
+    }
+    function preview() {
+        // document.getElementById("checkSuccessMsg").remove();
+        document.getElementById("checkSuccessMsg").style.visibility="hidden";
+        document.getElementById("preview").style.visibility="visible";
+        if (isPc()){
+            document.getElementById("tf-new-preview").style.visibility="visible";
+        }
+
+    }
+    function fileDownload(id) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('get', 'https://b.pingan.pet/m/act/koudai/printflow/download?id=' + id);
+        xhr.send();
+        xhr.responseType = 'blob'; //设置请求回来的数据为blob方式
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // 数据在 this.response 保存
+                // excel 的 MIME 格式为 application/vnd.ms-excel
+                var aa = document.createElement('a');
+                var blob;
+                var contentType = xhr.getResponseHeader("content-type");
+                if(contentType == 'application/pdf'){
+                    blob = new Blob([this.response], {type: "application/pdf"});
+                    // 创建a链接 href链接地址 download为下载下来后文件的名称
+                    aa.download = checkCode + '(0).pdf';
+                }else {
+                    blob = new Blob([this.response], {type: "application/zip"});
+                    // 创建a链接 href链接地址 download为下载下来后文件的名称
+                    aa.download = checkCode + '.zip';
+                }
+                aa.href = URL.createObjectURL(blob);
+                aa.innerHTML = 'a链接';
+                aa.style.display = 'none'; //隐藏a标签 直接调用a标签的点击事件
+                document.body.appendChild(aa);
+                aa.click();
+            }
+        }
+
+
+    }
+    function returnPre() {
+        var checkSuccessMsg = document.getElementById("checkSuccessMsg").style.visibility ;
+        if (checkSuccessMsg == "visible") {
+            document.getElementById("checkSuccessMsg").style.visibility = "hidden";
+            document.getElementById("checkMsg").style.visibility = "visible";
+        } else {
+            document.getElementById("preview").style.visibility = "hidden";
+            document.getElementById("tf-new-preview").style.visibility="hidden";
+            document.getElementById("checkSuccessMsg").style.visibility = "visible";
+        };
+    }
+    function isPc() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPod", "iPad"];
+        var flag = true;
+        for (var i=0; i<Agents.length; i++) {
+            if (userAgentInfo.indexOf(Agents[i]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+</script>
+<script src="https://bank-static.pingan.com.cn/m/act/koudai/printflow/js/libs/vue.min.js"></script>
+<script src="https://bank-static.pingan.com.cn/m/act/koudai/printflow/js/libs/pec.min.js"></script>
+<script>window._PEC=window.PEC</script>
+<script type="text/javascript" src="https://bank-static.pingan.com.cn/app_com/??libs/zepto/1.2.0/zepto.min.js,pab/1.0.0/pab.js,authsdk/1.0.0/auth-sdk.js"></script>
+<script type="text/javascript" src="https://bank-static.pingan.com.cn/aladdin/1.0.22/aladdin.ibank.min.js"></script>
+<script type="text/javascript" src="https://bank-static.pingan.com.cn/platform/addressManage/getAddress.js"></script>
+<script>window.bow=window.aladdin</script>
+<script type="text/javascript" src="https://bank-static.pingan.com.cn/app_com/webtrends/h5/2.0.0/banksdc_m.js"></script>
+<script type="text/javascript" src="https://bank-static.pingan.com.cn/m/act/koudai/printflow/js/manifest.js?v=3cb373a806&amp;7e470f38fce8308c8a3b"></script>
+<script type="text/javascript" src="https://bank-static.pingan.com.cn/m/act/koudai/printflow/js/vendor.js?v=0ed5bb2beb&amp;7e470f38fce8308c8a3b"></script>
+<script type="text/javascript" src="https://bank-static.pingan.com.cn/m/act/koudai/printflow/js/application-download.js?v=42f86d9454&amp;7e470f38fce8308c8a3b"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+</body>
+</html>
