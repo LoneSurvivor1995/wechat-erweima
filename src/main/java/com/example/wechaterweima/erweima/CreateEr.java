@@ -22,7 +22,7 @@ public class CreateEr {
 
     public static void main ( String[] args ) throws Exception {
 //        www.eecup.com
-        String checkCode = "PTI97177420200901";
+        String checkCode = "PTI98926320200908";
         String text = "https://b.pingan.pet/m/act/koudai/printflow/application-download.html?checkCode=" + checkCode    ;
         String path = "D:/erweima/"; //图片生成的位置
         int width = 900;
